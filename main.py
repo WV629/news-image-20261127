@@ -1,17 +1,20 @@
-"""Deliver the rendered poster to the grading output folder.
+"""Copy the finished poster into the grading output directory.
 
-generate.py draws entry.png ahead of time. The grading sandbox has no
-network access and no Pillow, so this entrypoint only copies the finished
-bytes to the location the harness reads."""
+The sandbox that grades this entry has no network and no Pillow, so the
+poster is rendered ahead of time (generate.py) and this entrypoint only
+moves the finished bytes to the location the harness reads.
+"""
 import os
+import shutil
 from pathlib import Path
 
 
-def deliver():
-    root = Path(__file__).resolve().parent
-    out = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "entry.png").write_bytes((root / "entry.png").read_bytes())
+def main():
+    here = Path(__file__).resolve().parent
+    dest = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    dest.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(here / "entry.png", dest / "entry.png")
 
 
-deliver()
+if __name__ == "__main__":
+    main()

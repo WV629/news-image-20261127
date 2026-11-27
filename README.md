@@ -1,17 +1,25 @@
-# news-image-20261127
+# Friday 27 November 2026 in one picture
 
 [![make.fun · news-image-20261127](https://make.fun/badge/news-image-20261127.svg)](https://make.fun/bounty/news-image-20261127?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261127)
 [![rank](https://make.fun/badge/news-image-20261127/WV629/news-image-20261127/rank.svg)](https://make.fun/bounty/news-image-20261127/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261127)
 [![reward](https://make.fun/badge/news-image-20261127/WV629/news-image-20261127/reward.svg)](https://make.fun/bounty/news-image-20261127?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261127)
 
-One image summing up Friday 27 November 2026's world news: 36 dated stories across 9 regions — 3 hero stories, a numbers panel, 10 small cards, 23 briefs, a world map, a date check and a confidence legend — drawn in code with Pillow. See NEWS.md for the story list and sources.
+A single poster that sums up the world's news of Friday 27 November 2026:
+36 dated stories from 9 regions — three hero stories with big drawn scenes,
+a numbers band, ten cards with their own visual panels, twenty-three briefs,
+a world map with numbered pins, a date check and a confidence legend.
+Everything is drawn in code with Pillow; the full story list with sources
+lives in NEWS.md.
 
-## Run it
+## Build the poster
 
 ```sh
 python3 generate.py
 MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
+
+`generate.py` writes `entry.png`; `main.py` copies it to the output folder
+the grader reads.
 
 ---
 
